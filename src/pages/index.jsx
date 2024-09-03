@@ -1,33 +1,45 @@
 import React, { useEffect, useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 import { Link as Anchor } from "react-router-dom";
+import "react-responsive-carousel/lib/styles/carousel.min.css"; // requires a loader
+import { Carousel } from 'react-responsive-carousel';
 export default function Index() {
   return (
     <>
       {/* Navbar */}
-      <div className="w-full fixed z-50 flex h-[15%] px-[5rem] py-[1rem] bg-[#E0D2A3] items-center justify-between">
-        <Anchor to="/" className="w-[25%]">
+      <div className="w-full fixed z-50 flex px-[2rem] lg:px-[5rem] py-[1rem] bg-[black] items-center justify-between">
+        <Anchor to="/" className=" w-[23%] lg:w-[7%]">
           <img
-            className="w-[5rem]"
+            className="w-full"
             src="https://firebasestorage.googleapis.com/v0/b/boda-8ade5.appspot.com/o/freelance%2FLogo%20Luxor_A%2002.png?alt=media&token=1b8e0915-6872-47ab-a029-f57edfbdff8e"
             alt="Logo"
           />
         </Anchor>
-        <div className="w-[75%] gap-[5rem] flex text-[1.1rem] font-bold justify-end">
+        <div className="w-[75%] hidden gap-[5rem] lg:flex items-center text-[1.1rem] text-white font-bold justify-end">
           <Anchor to="/">Inicio</Anchor>
-          <Anchor to="/services">Nosotros</Anchor>
-          <Anchor to="/gallery">Galería</Anchor>
+          <Anchor to="/services">Sobre nosotros</Anchor>
+          <Anchor to="/gallery">Nuestros servicios</Anchor>
           <Anchor to="/contact">Contáctanos</Anchor>
+          <div className="border-solid border-[2px] border-[white] rounded-[10px] flex justify-center items-center py-[1rem] px-[1rem]">
+          <a href="">+54 9 11 2400-1758</a>
+        </div>
+        </div>
+        <div className="lg:hidden flex px-[0.5rem] py-[0.5rem] rounded-[10px] border-white border-solid border-[2px]">
+          <button className="">
+          <svg class="w-8 h-8 text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
+            <path stroke="currentColor" stroke-linecap="round" stroke-width="2" d="M5 7h14M5 12h14M5 17h14"/>
+          </svg>
+          </button>
         </div>
       </div>
 
       {/* Body */}
-      <div className='w-full h-auto pt-[10%] pb-[2rem] items-center flex bg-[url("https://image.slidesdocs.com/responsive-images/background/orange-highlights-monochrome-window-frame-in-3d-rendering-powerpoint-background_c76fd96f1a__960_540.jpg")] flex-col'>
+      <div className='w-full h-auto pt-[35%] lg:pt-[10%] pb-[2rem] items-center bg-cover flex bg-[url("https://firebasestorage.googleapis.com/v0/b/boda-8ade5.appspot.com/o/fotos%20de%20paginas%20freelance%2FPatrones%20(3).png?alt=media&token=d6483bae-964e-4695-b5c4-4cb664e36fed")] flex-col'>
         {/* Sección 1 - Contáctanos */}
-        <div className="w-[80%] items-center h-auto  bg-[#F4F4F4] flex flex-col ">
-          <div className='w-full h-[30vh] bg-cover flex justify-center relative bg-[url("https://vaellocampos.com/wp-content/uploads/banner-contacto.jpg")]'>
-            <div className="bg-[#F59111] absolute top-[55%]  text-white font-bold text-[1.5rem] py-[1rem] px-[1rem]">
-              <p>Déjanos tu consulta o pedinos un presupuesto</p>
+        <div className="lg:w-[80%] w-[90%] items-center  h-auto  bg-[#f4f4f4] flex flex-col ">
+          <div className="w-full h-[25vh]  lg:h-[30vh] lg:px-0   bg-cover flex items-center justify-center relative bg-center bg-[url('https://firebasestorage.googleapis.com/v0/b/tienda-elgestormx.appspot.com/o/fondo-terminos-y-condiciones.jpg?alt=media&token=5fe4dec4-aefd-4ad6-8797-af8e9d86307b')]">
+            <div className="bg-[#F59111] absolute lg:w-auto w-[80%]  text-white font-bold lg:text-[1.5rem] text-center py-[1rem]  px-[1rem]">
+              <p>Dejá tu consulta o pedí un presupuesto</p>
             </div>
           </div>
           <div className="w-[80%] px-[1rem] py-[4rem]">
@@ -68,19 +80,19 @@ export default function Index() {
                 ></textarea>
               </div>
               <div className="flex justify-center">
-                <button type="submit" className="btn btn-primary bg-[#F59111]">
+                <button type="submit" className="px-[1rem] py-[0.5rem] rounded-[5px] text-white font-semibold bg-[#F59111]">
                   Enviar consulta
                 </button>
               </div>
             </form>
           </div>
-          <div className='w-full h-[30vh] bg-cover bg-center flex justify-center relative bg-[url("https://vidriosyespejosmanizales.com/images/310529-vidrios-los-angeles-banner.jpg")]'>
-            <div className="bg-[#F59111] absolute top-[55%]  text-white font-bold text-[1.5rem] py-[1rem] px-[1rem]">
-              <p>Lo que nos distingue</p>
+          <div className='w-full h-[25vh] lg:h-[30vh] bg-cover bg-center items-center flex justify-center relative bg-[url("https://vidriosyespejosmanizales.com/images/310529-vidrios-los-angeles-banner.jpg")]'>
+            <div className="bg-[#F59111] absolute lg:w-auto w-[80%]   text-white font-bold text-center lg:text-[1.5rem] py-[1rem] px-[1rem]">
+              <p>Lo que nos distingue en el mercado</p>
             </div>
           </div>
-          <div className="w-full flex bg-white py-[5rem] px-[1rem]">
-            <div class=" gap-2 flex items-center flex-col w-[25%] px-[1.5rem]">
+          <div className="w-full flex lg:flex-row flex-col lg:gap-0 gap-4 bg-white py-[2rem] lg:py-[5rem] px-[1rem]">
+            <div class=" gap-2 flex items-center flex-col w-full lg:w-[25%] px-[1.5rem]">
               <svg
                 class="w-10 h-10 text-[black]"
                 aria-hidden="true"
@@ -104,7 +116,7 @@ export default function Index() {
                 trabajos.
               </p>
             </div>
-            <div class=" gap-2 flex items-center flex-col w-[25%] px-[1.5rem]">
+            <div class=" gap-2 flex items-center flex-col w-full lg:w-[25%] px-[1.5rem]">
               <svg
                 class="w-10 h-10 text-[black]"
                 aria-hidden="true"
@@ -130,7 +142,7 @@ export default function Index() {
               </p>
             </div>
 
-            <div class=" gap-2 flex items-center flex-col w-[25%] px-[1.5rem]">
+            <div class=" gap-2 flex items-center flex-col w-full lg:w-[25%] px-[1.5rem]">
               <svg
                 class="w-10 h-10 text-[black]"
                 aria-hidden="true"
@@ -156,7 +168,7 @@ export default function Index() {
               </p>
             </div>
 
-            <div class=" gap-2 flex items-center flex-col w-[25%] px-[1.5rem]">
+            <div class=" gap-2 flex items-center flex-col w-full lg:w-[25%] px-[1.5rem]">
               <svg
                 class="w-10 h-10 text-[black]"
                 aria-hidden="true"
@@ -182,25 +194,54 @@ export default function Index() {
               </p>
             </div>
           </div>
-          <div className='w-full h-[30vh] bg-cover flex justify-center relative bg-[url("https://bitool.co/assets/imagesTarjetasPersonales/6545/605bfa5410aa665b9eea6e1cc6bb9f0cd2a47751a186f.jpg")]'>
-            <div className="bg-[#F59111] absolute top-[55%]  text-white font-bold text-[1.5rem] py-[1rem] px-[1rem]">
-              <p>Algunos de nuestros trabajos</p>
+          <div className='w-full h-[25vh] lg:h-[30vh] bg-cover flex items-center justify-center relative bg-[url("https://bitool.co/assets/imagesTarjetasPersonales/6545/605bfa5410aa665b9eea6e1cc6bb9f0cd2a47751a186f.jpg")]'>
+            <div className="bg-[#F59111] absolute lg:w-auto w-[80%]  text-white font-bold text-center lg:text-[1.5rem] py-[1rem] px-[1rem]">
+              <p>Algunos de nuestros servicios</p>
             </div>
           </div>
-          <div className="w-full h-[50vh]"></div>
+          <div className="w-full flex lg:flex-row flex-col">
+            <div className="lg:w-[50%] w-full flex flex-col py-[2rem] gap-4 px-[2rem]">
+              <p className="lg:text-[1.7rem] text-[1.5rem] font-semibold">Nos especializamos en la instalación de:</p>
+              <div className="flex flex-col gap-2 text-[1.2rem]">
+                  <p>-Mamparas</p>
+                  <p>-Ventanas</p>
+                  <p>-Ventanales</p>
+                  <p>-Persianas</p>
+                  <p>-Puertas</p>
+                  <p>-Mosquiteros</p>
+                  <p>-Puertas corredizas</p>
+                  <p>-Cortinas roller y mucho más ...</p>
+              </div>
+            </div>
+          <div className="lg:w-[50%] w-full lg:px-[4rem] px-[1rem] py-[1rem] lg:py-[2rem]">
+          <Carousel  showStatus={false} showArrows={true} className=' bg-[white] w-full' showThumbs={false} autoPlay infiniteLoop>
+        <img className='w-full ' src="https://firebasestorage.googleapis.com/v0/b/boda-8ade5.appspot.com/o/fotos%20de%20paginas%20freelance%2FCortina%20(1).png?alt=media&token=94b36bd3-b7c3-4728-abff-e32cf5004652" />
+        <img className='w-full ' src="https://firebasestorage.googleapis.com/v0/b/boda-8ade5.appspot.com/o/fotos%20de%20paginas%20freelance%2FCortina%20(5).png?alt=media&token=81260df7-ca41-4bf8-ae48-d60d181d2aad" />
+        <img className='w-full ' src="https://firebasestorage.googleapis.com/v0/b/boda-8ade5.appspot.com/o/fotos%20de%20paginas%20freelance%2FMampara%20(5).png?alt=media&token=a36fdc00-5fb0-44e0-8204-dde776c75c2b" />
+        <img className='w-full ' src="https://firebasestorage.googleapis.com/v0/b/boda-8ade5.appspot.com/o/fotos%20de%20paginas%20freelance%2FMampara%20(9).png?alt=media&token=6ef16efd-ef0d-4e4a-9e44-b068d1f93178" />
+        <img className='w-full ' src="https://firebasestorage.googleapis.com/v0/b/boda-8ade5.appspot.com/o/fotos%20de%20paginas%20freelance%2FPersiana%20(1).png?alt=media&token=2eb97020-a793-4e86-a3ba-63babdb401f9" />
+        <img className='w-full ' src="https://firebasestorage.googleapis.com/v0/b/boda-8ade5.appspot.com/o/fotos%20de%20paginas%20freelance%2FPersiana%20(5).png?alt=media&token=f8ad8e73-98ea-4268-bf8a-76b6b5570b8a" />
+        <img className='w-full ' src="https://firebasestorage.googleapis.com/v0/b/boda-8ade5.appspot.com/o/fotos%20de%20paginas%20freelance%2FPuerta%20(1).png?alt=media&token=c1cec28a-bf5b-4e85-990d-05023b542394" />
+        <img className='w-full ' src="https://firebasestorage.googleapis.com/v0/b/boda-8ade5.appspot.com/o/fotos%20de%20paginas%20freelance%2FPuerta%20(4).png?alt=media&token=6c1427aa-7565-4599-b2a1-404128302267" />
+        <img className='w-full ' src="https://firebasestorage.googleapis.com/v0/b/boda-8ade5.appspot.com/o/fotos%20de%20paginas%20freelance%2FVentanal%20(7).png?alt=media&token=1ed24c98-c788-431a-91fa-bb9a2e00b587" />
+        <img className='w-full ' src="https://firebasestorage.googleapis.com/v0/b/boda-8ade5.appspot.com/o/fotos%20de%20paginas%20freelance%2FVentanal%20(8).png?alt=media&token=20cf8628-1dd9-4a7e-bf6d-b3ee284ac1de" />
+        </Carousel>
+          </div>
+          </div>
         </div>
 
         {/* Sección 2 - Nuestros servicios */}
       </div>
       {/* whatsapp flotante */}
-      <div className="fixed top-[87%] z-0 right-[3%]">
+      <div className="fixed items-end bottom-[5%] gap-2 hidden lg:flex z-0 right-[0%]">
+        <p className="text-black py-[0.3rem] text-[1.1rem] px-[0.5rem] bg-[white] font-semibold rounded-[10px]">Chateá con nosotros</p>
         <a href="">
           <svg
             xmlns="http://www.w3.org/2000/svg"
             x="0px"
             y="0px"
-            width="60"
-            height="60"
+            width="90"
+            height="90"
             viewBox="0 0 48 48"
           >
             <path
@@ -228,8 +269,9 @@ export default function Index() {
           </svg>
         </a>
       </div>
-      <div className="bg-[black] z-50  gap-4 flex flex-col justify-between ">
-        <div className="flex justify-between px-[4rem] py-[2rem] items-center">
+      {/* FOOTER */}
+      <div className="bg-[black] w-full z-50  gap-4 flex flex-col justify-between ">
+        <div className="flex lg:flex-row flex-col lg:gap-0 gap-2 text-center justify-between lg:px-[4rem] py-[2rem] items-center">
           <img
             className="w-[9rem]"
             src="https://firebasestorage.googleapis.com/v0/b/boda-8ade5.appspot.com/o/freelance%2FLogo%20Luxor_A%2002.png?alt=media&token=1b8e0915-6872-47ab-a029-f57edfbdff8e"
@@ -239,7 +281,7 @@ export default function Index() {
           <div className="flex flex-col gap-2 items-center text-white">
             <p className="text-[1.2rem]">Visitá nuestras redes sociales</p>
             <div className="flex gap-2">
-              <a href="">
+              <a target="_blank" href="https://www.facebook.com/profile.php?id=61557169453941&mibextid=ZbWKwL">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   x="0px"
@@ -258,7 +300,8 @@ export default function Index() {
                   ></path>
                 </svg>
               </a>
-              <svg
+              <a target="_blank" href="https://www.instagram.com/aberturas.luxor?igsh=cTRndGd2cmV3ODEx">
+              <svg 
                 xmlns="http://www.w3.org/2000/svg"
                 x="0px"
                 y="0px"
@@ -314,26 +357,34 @@ export default function Index() {
                   d="M30,37H18c-3.859,0-7-3.14-7-7V18c0-3.86,3.141-7,7-7h12c3.859,0,7,3.14,7,7v12	C37,33.86,33.859,37,30,37z M18,13c-2.757,0-5,2.243-5,5v12c0,2.757,2.243,5,5,5h12c2.757,0,5-2.243,5-5V18c0-2.757-2.243-5-5-5H18z"
                 ></path>
               </svg>
+              </a>
             </div>
           </div>
 
           <div className="flex flex-col gap-2 text-white">
             <div className="flex flex-col ">
               <p className="text-[1.2rem] underline">Días y horarios de atención</p>
-              <p>Lun-vier 9hrs-18hrs</p>
-              <p>Sab 10hrs-13hrs</p>
+              <p>Lun-vier 9hrs-17hrs</p>
+              <p>Sab 10hrs-14hrs</p>
             </div>
             <div className="flex flex-col">
               <p className="text-[1.2rem] underline">Dirección</p>
-              <p>Av. Rivadavia 1047</p>
+              <p>Av. Córdoba 4318-CABA</p>
             </div>
           </div>
         </div>
-        <div className="w-full text-white  bg-[#343434] py-[0.5rem] justify-center gap-2 flex">
-          <p>Diseñado por</p>
-          <a href="">Saeta design®</a>
-          <p>-</p>
-          <p>todos los derechos reservados 2024</p>
+        <div className="w-full lg:flex-row flex-col text-white  bg-[#343434] py-[0.5rem] justify-center gap-2 flex">
+          <p className="lg:flex hidden">Diseñado por</p>
+          <a className="lg:flex hidden" href="">Saeta design®</a>
+          <p className="lg:flex hidden">-</p>
+          <p className="lg:flex hidden">todos los derechos reservados 2024</p>
+          <div className="lg:hidden flex gap-2 justify-center text-center">
+          <p className="">Diseñado por</p>
+          <a className="underline" href="">Saeta design®</a>
+          </div>
+          <div className="lg:hidden flex  justify-center text-center">
+          <p className="">todos los derechos reservados 2024</p>
+          </div>
         </div>
       </div>
     </>
