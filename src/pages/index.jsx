@@ -3,25 +3,26 @@ import { useNavigate, useParams } from "react-router-dom";
 import { Link as Anchor } from "react-router-dom";
 import "react-responsive-carousel/lib/styles/carousel.min.css"; // requires a loader
 import { Carousel } from 'react-responsive-carousel';
+import '../fonts/fonts.css'
 export default function Index() {
   return (
     <>
       {/* Navbar */}
       <div className="w-full fixed z-50 flex px-[2rem] lg:px-[5rem] py-[1rem] bg-[black] items-center justify-between">
-        <Anchor to="/" className=" w-[23%] lg:w-[7%]">
+        <Anchor to="/" className=" w-[23%] lg:w-[12%]">
           <img
             className="w-full"
-            src="https://firebasestorage.googleapis.com/v0/b/boda-8ade5.appspot.com/o/freelance%2FLogo%20Luxor_A%2002.png?alt=media&token=1b8e0915-6872-47ab-a029-f57edfbdff8e"
+            src="https://firebasestorage.googleapis.com/v0/b/boda-8ade5.appspot.com/o/freelance%2FLogo%20Luxor%20Horizontal.png?alt=media&token=b40f25bc-786c-4b8c-87b5-0c2071c1f27f"
             alt="Logo"
           />
         </Anchor>
-        <div className="w-[75%] hidden gap-[5rem] lg:flex items-center text-[1.1rem] text-white font-bold justify-end">
+        <div className="w-[75%] hidden montserrat gap-[5rem] lg:flex items-center text-[1.1rem] text-[#EA570E] font-bold justify-end">
           <Anchor to="/">Inicio</Anchor>
           <Anchor to="/services">Sobre nosotros</Anchor>
           <Anchor to="/gallery">Nuestros servicios</Anchor>
           <Anchor to="/contact">Contáctanos</Anchor>
           <div className="border-solid border-[2px] border-[white] rounded-[10px] flex justify-center items-center py-[1rem] px-[1rem]">
-          <a href="">+54 9 11 2400-1758</a>
+          <a target="_blank" href="https://wa.link/p8yp5z">+54 9 11 2400-1758</a>
         </div>
         </div>
         <div className="lg:hidden flex px-[0.5rem] py-[0.5rem] rounded-[10px] border-white border-solid border-[2px]">
@@ -34,12 +35,12 @@ export default function Index() {
       </div>
 
       {/* Body */}
-      <div className='w-full h-auto pt-[35%] lg:pt-[10%] pb-[2rem] items-center bg-cover flex bg-[url("https://firebasestorage.googleapis.com/v0/b/boda-8ade5.appspot.com/o/fotos%20de%20paginas%20freelance%2FPatrones%20(3).png?alt=media&token=d6483bae-964e-4695-b5c4-4cb664e36fed")] flex-col'>
+      <div className='w-full h-auto pt-[35%] lg:pt-[10%] pb-[2rem] items-center bg-contain flex bg-[url("https://firebasestorage.googleapis.com/v0/b/boda-8ade5.appspot.com/o/freelance%2FPatrones%20(4).png?alt=media&token=b6f4ed8e-13fd-4759-a309-56c53c124f3d")] flex-col'>
         {/* Sección 1 - Contáctanos */}
         <div className="lg:w-[80%] w-[90%] items-center  h-auto  bg-[#f4f4f4] flex flex-col ">
           <div className="w-full h-[25vh]  lg:h-[30vh] lg:px-0   bg-cover flex items-center justify-center relative bg-center bg-[url('https://firebasestorage.googleapis.com/v0/b/tienda-elgestormx.appspot.com/o/fondo-terminos-y-condiciones.jpg?alt=media&token=5fe4dec4-aefd-4ad6-8797-af8e9d86307b')]">
             <div className="bg-[#F59111] absolute lg:w-auto w-[80%]  text-white font-bold lg:text-[1.5rem] text-center py-[1rem]  px-[1rem]">
-              <p>Dejá tu consulta o pedí un presupuesto</p>
+              <p className="montserrat">Dejá tu consulta o pedí un presupuesto</p>
             </div>
           </div>
           <div className="w-[80%] px-[1rem] py-[4rem]">
@@ -88,7 +89,7 @@ export default function Index() {
           </div>
           <div className='w-full h-[25vh] lg:h-[30vh] bg-cover bg-center items-center flex justify-center relative bg-[url("https://vidriosyespejosmanizales.com/images/310529-vidrios-los-angeles-banner.jpg")]'>
             <div className="bg-[#F59111] absolute lg:w-auto w-[80%]   text-white font-bold text-center lg:text-[1.5rem] py-[1rem] px-[1rem]">
-              <p>Lo que nos distingue en el mercado</p>
+              <p className="montserrat">Lo que nos distingue en el mercado</p>
             </div>
           </div>
           <div className="w-full flex lg:flex-row flex-col lg:gap-0 gap-4 bg-white py-[2rem] lg:py-[5rem] px-[1rem]">
@@ -196,12 +197,12 @@ export default function Index() {
           </div>
           <div className='w-full h-[25vh] lg:h-[30vh] bg-cover flex items-center justify-center relative bg-[url("https://bitool.co/assets/imagesTarjetasPersonales/6545/605bfa5410aa665b9eea6e1cc6bb9f0cd2a47751a186f.jpg")]'>
             <div className="bg-[#F59111] absolute lg:w-auto w-[80%]  text-white font-bold text-center lg:text-[1.5rem] py-[1rem] px-[1rem]">
-              <p>Algunos de nuestros servicios</p>
+              <p className="montserrat">Nuestros servicios</p>
             </div>
           </div>
           <div className="w-full flex lg:flex-row flex-col">
-            <div className="lg:w-[50%] w-full flex flex-col py-[2rem] gap-4 px-[2rem]">
-              <p className="lg:text-[1.7rem] text-[1.5rem] font-semibold">Nos especializamos en la instalación de:</p>
+            <div className="lg:w-[50%] w-full justify-center flex flex-col py-[2rem] gap-4 px-[2rem]">
+              <p className="lg:text-[1.5rem] text-[1.5rem] font-semibold montserrat">Nos especializamos en la instalación de:</p>
               <div className="flex flex-col gap-2 text-[1.2rem]">
                   <p>-Mamparas</p>
                   <p>-Ventanas</p>
@@ -211,6 +212,7 @@ export default function Index() {
                   <p>-Mosquiteros</p>
                   <p>-Puertas corredizas</p>
                   <p>-Cortinas roller y mucho más ...</p>
+                  
               </div>
             </div>
           <div className="lg:w-[50%] w-full lg:px-[4rem] px-[1rem] py-[1rem] lg:py-[2rem]">
