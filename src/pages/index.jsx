@@ -1,10 +1,42 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 import { Link as Anchor } from "react-router-dom";
 import "react-responsive-carousel/lib/styles/carousel.min.css"; // requires a loader
 import { Carousel } from 'react-responsive-carousel';
 import '../fonts/fonts.css'
+
 export default function Index() {
+const navigate=useNavigate()
+const [nombre, setNombre]=useState()
+const [correo, setCorreo]=useState()
+const [mensaje, setMensaje]=useState()
+const inputNombre=useRef()
+const inputCorreo=useRef()
+const inputMensaje=useRef()
+
+const captureNombre=()=>{
+setNombre(inputNombre.current.value)
+}
+const captureCorreo=()=>{
+  setCorreo(inputCorreo.current.value)
+  }
+  const captureMensaje=()=>{
+    setMensaje(inputMensaje.current.value)
+  }
+async function enviar(){
+try {
+if(!nombre || !correo || !mensaje){
+alert('Complete los campos para enviar su consulta.')
+}else{
+  const encodedMessage = encodeURIComponent(`${mensaje}\n\nDatos del cliente:\nNombre: ${nombre}\nCorreo electrónico: ${correo}`);
+  
+  const whatsappUrl = `https://wa.me/+541124001758?text=${encodedMessage}`;
+  window.open(whatsappUrl, '_blank');
+}
+} catch (error) {
+  console.log(error);
+}
+}
   return (
     <>
       {/* Navbar */}
@@ -50,6 +82,8 @@ export default function Index() {
                   Nombre completo:
                 </label>
                 <input
+                  ref={inputNombre}
+                  onChange={captureNombre}
                   type="text"
                   className="form-control"
                   id="fullName"
@@ -62,6 +96,8 @@ export default function Index() {
                   Correo electrónico:
                 </label>
                 <input
+                  ref={inputCorreo}
+                  onChange={captureCorreo}
                   type="email"
                   className="form-control"
                   id="email"
@@ -74,6 +110,8 @@ export default function Index() {
                   Mensaje:
                 </label>
                 <textarea
+                  ref={inputMensaje}
+                  onChange={captureMensaje}
                   className="form-control"
                   id="message"
                   rows="3"
@@ -81,7 +119,7 @@ export default function Index() {
                 ></textarea>
               </div>
               <div className="flex justify-center">
-                <button type="submit" className="px-[1rem] py-[0.5rem] rounded-[5px] text-white font-semibold bg-[#F59111]">
+                <button onClick={enviar} type="submit" className="px-[1rem] py-[0.5rem] rounded-[5px] text-white font-semibold bg-[#F59111]">
                   Enviar consulta
                 </button>
               </div>
@@ -279,10 +317,25 @@ export default function Index() {
             src="https://firebasestorage.googleapis.com/v0/b/boda-8ade5.appspot.com/o/freelance%2FLogo%20Luxor_A%2002.png?alt=media&token=1b8e0915-6872-47ab-a029-f57edfbdff8e"
             alt="Logo"
           />
+      <div className="flex flex-col gap-2 items-center justify-center text-white">
+            <div className="flex flex-col ">
+              <p className="text-[1.2rem] underline">Días y horarios de atención</p>
+              <p>Lun-vier 9hrs-17hrs</p>
+              <p>Sab 10hrs-14hrs</p>
+            </div>
+            <div className="flex flex-col">
+              <p className="text-[1.2rem] underline">Dirección</p>
+              <a target="_blank" className="flex gap-1 items-center" href="https://g.co/kgs/cGx96zf"><svg class="w-4 h-4 text-gray-800 dark:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 24 24">
+  <path fill-rule="evenodd" d="M11.906 1.994a8.002 8.002 0 0 1 8.09 8.421 7.996 7.996 0 0 1-1.297 3.957.996.996 0 0 1-.133.204l-.108.129c-.178.243-.37.477-.573.699l-5.112 6.224a1 1 0 0 1-1.545 0L5.982 15.26l-.002-.002a18.146 18.146 0 0 1-.309-.38l-.133-.163a.999.999 0 0 1-.13-.202 7.995 7.995 0 0 1 6.498-12.518ZM15 9.997a3 3 0 1 1-5.999 0 3 3 0 0 1 5.999 0Z" clip-rule="evenodd"/>
+</svg>
 
+              <p>Av. Córdoba 4318-CABA</p></a>
+            </div>
+          </div>
           <div className="flex flex-col gap-2 items-center text-white">
             <p className="text-[1.2rem]">Visitá nuestras redes sociales</p>
             <div className="flex gap-2">
+              <div className="flex flex-col items-center gap-2">
               <a target="_blank" href="https://www.facebook.com/profile.php?id=61557169453941&mibextid=ZbWKwL">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
@@ -302,6 +355,9 @@ export default function Index() {
                   ></path>
                 </svg>
               </a>
+              <p className="text-white text-[0.8rem] underline">Aberturas Luxor</p>
+              </div>
+              <div className="flex flex-col items-center gap-2">
               <a target="_blank" href="https://www.instagram.com/aberturas.luxor?igsh=cTRndGd2cmV3ODEx">
               <svg 
                 xmlns="http://www.w3.org/2000/svg"
@@ -360,18 +416,8 @@ export default function Index() {
                 ></path>
               </svg>
               </a>
-            </div>
-          </div>
-
-          <div className="flex flex-col gap-2 text-white">
-            <div className="flex flex-col ">
-              <p className="text-[1.2rem] underline">Días y horarios de atención</p>
-              <p>Lun-vier 9hrs-17hrs</p>
-              <p>Sab 10hrs-14hrs</p>
-            </div>
-            <div className="flex flex-col">
-              <p className="text-[1.2rem] underline">Dirección</p>
-              <p>Av. Córdoba 4318-CABA</p>
+              <p className="text-white text-[0.8rem] underline">@aberturas.luxor</p>
+              </div>
             </div>
           </div>
         </div>
