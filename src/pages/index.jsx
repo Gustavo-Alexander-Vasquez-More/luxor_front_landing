@@ -40,7 +40,7 @@ alert('Complete los campos para enviar su consulta.')
   return (
     <>
       {/* Navbar */}
-      <div className="w-full fixed z-50 flex px-[2rem] lg:px-[5rem] py-[1rem] bg-[black] items-center justify-between">
+      <div className="w-full fixed z-50 flex px-[2rem] lg:gap-4 lg:px-[2rem] 2xl:px-[5rem] h-[15%] lg:h-[17%] py-[1rem] bg-[black] items-center justify-between">
         <Anchor to="/" className=" w-[23%] lg:w-[12%]">
           <img
             className="w-full"
@@ -48,7 +48,7 @@ alert('Complete los campos para enviar su consulta.')
             alt="Logo"
           />
         </Anchor>
-        <div className="w-[75%] hidden montserrat gap-[5rem] lg:flex items-center text-[1.1rem] text-[#EA570E] font-bold justify-end">
+        <div className="w-[88%] hidden montserrat 2xl:gap-[5rem] lg:gap-7 lg:flex items-center text-[1.1rem] text-[#EA570E] font-bold justify-end">
           <Anchor to="/">Inicio</Anchor>
           <Anchor to="/services">Sobre nosotros</Anchor>
           <Anchor to="/gallery">Nuestros servicios</Anchor>
@@ -67,7 +67,7 @@ alert('Complete los campos para enviar su consulta.')
       </div>
 
       {/* Body */}
-      <div className='w-full h-auto pt-[35%] lg:pt-[10%] pb-[2rem] items-center bg-contain flex bg-[url("https://firebasestorage.googleapis.com/v0/b/boda-8ade5.appspot.com/o/freelance%2FPatrones%20(4).png?alt=media&token=b6f4ed8e-13fd-4759-a309-56c53c124f3d")] flex-col'>
+      <div className='w-full h-auto pt-[35%] lg:pt-[14%] 2xl:pt-[10%] pb-[2rem] items-center bg-contain flex bg-[url("https://firebasestorage.googleapis.com/v0/b/boda-8ade5.appspot.com/o/freelance%2FPatrones%20(4).png?alt=media&token=b6f4ed8e-13fd-4759-a309-56c53c124f3d")] flex-col'>
         {/* Sección 1 - Contáctanos */}
         <div className="lg:w-[80%] w-[90%] items-center  h-auto  bg-[#f4f4f4] flex flex-col ">
           <div className="w-full h-[25vh]  lg:h-[30vh] lg:px-0   bg-cover flex items-center justify-center relative bg-center bg-[url('https://firebasestorage.googleapis.com/v0/b/tienda-elgestormx.appspot.com/o/fondo-terminos-y-condiciones.jpg?alt=media&token=5fe4dec4-aefd-4ad6-8797-af8e9d86307b')]">
@@ -147,7 +147,7 @@ alert('Complete los campos para enviar su consulta.')
                   clip-rule="evenodd"
                 />
               </svg>
-              <h6 class="card-subtitle mb-2 text-[black]">
+              <h6 class="card-subtitle mb-2 text-center text-[black]">
                 Material de Alta Calidad
               </h6>
               <p class="card-text text-center">
@@ -173,7 +173,7 @@ alert('Complete los campos para enviar su consulta.')
                   d="M4 4v15a1 1 0 0 0 1 1h15M8 16l2.5-5.5 3 3L17.273 7 20 9.667"
                 />
               </svg>
-              <h6 class="card-subtitle mb-2 text-[black]">
+              <h6 class="card-subtitle text-center mb-2 text-[black]">
                 Precios Competitivos
               </h6>
               <p class="card-text text-center">
@@ -198,7 +198,7 @@ alert('Complete los campos para enviar su consulta.')
                 />
               </svg>
 
-              <h6 class="card-subtitle mb-2 text-[black]">
+              <h6 class="card-subtitle text-center mb-2 text-[black]">
                 Entrega responsable
               </h6>
               <p class="card-text text-center">
@@ -224,7 +224,7 @@ alert('Complete los campos para enviar su consulta.')
                 />
               </svg>
 
-              <h6 class="card-subtitle mb-2 text-[black]">
+              <h6 class="card-subtitle mb-2 text-center text-[black]">
                 Asesoría Profesional
               </h6>
               <p class="card-text text-center">
