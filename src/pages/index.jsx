@@ -10,6 +10,7 @@ const navigate=useNavigate()
 const [nombre, setNombre]=useState()
 const [correo, setCorreo]=useState()
 const [mensaje, setMensaje]=useState()
+const [menu, setMenu]=useState(false)
 const inputNombre=useRef()
 const inputCorreo=useRef()
 const inputMensaje=useRef()
@@ -23,6 +24,14 @@ const captureCorreo=()=>{
   const captureMensaje=()=>{
     setMensaje(inputMensaje.current.value)
   }
+const openMenu=()=>{
+setMenu(true)
+document.body.style.overflow = 'hidden'; 
+}
+const closeMenu=()=>{
+setMenu(false)
+document.body.style.overflow = 'auto'
+}
 async function enviar(){
 try {
 if(!nombre || !correo || !mensaje){
@@ -41,7 +50,7 @@ alert('Complete los campos para enviar su consulta.')
     <>
       {/* Navbar */}
       <div className="w-full fixed z-50 flex px-[2rem] lg:gap-4 lg:px-[2rem] 2xl:px-[5rem] h-[15%] lg:h-[17%] py-[1rem] bg-[black] items-center justify-between">
-        <Anchor to="/" className=" w-[23%] lg:w-[12%]">
+        <Anchor to="/" className=" w-[45%] lg:w-[12%]">
           <img
             className="w-full"
             src="https://firebasestorage.googleapis.com/v0/b/boda-8ade5.appspot.com/o/freelance%2FLogo%20Luxor%20Horizontal.png?alt=media&token=b40f25bc-786c-4b8c-87b5-0c2071c1f27f"
@@ -58,7 +67,7 @@ alert('Complete los campos para enviar su consulta.')
         </div>
         </div>
         <div className="lg:hidden flex px-[0.5rem] py-[0.5rem] rounded-[10px] border-white border-solid border-[2px]">
-          <button className="">
+          <button onClick={openMenu} className="">
           <svg class="w-8 h-8 text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
             <path stroke="currentColor" stroke-linecap="round" stroke-width="2" d="M5 7h14M5 12h14M5 17h14"/>
           </svg>
@@ -435,6 +444,25 @@ alert('Complete los campos para enviar su consulta.')
           </div>
         </div>
       </div>
+      {/* ESTO ES EL MENU */}
+      {menu === true && (
+       <div className="z-50 flex flex-col absolute  top-0 right-0 bg-[black] w-[60%] h-[180vh]">
+          <div className="w-full flex py-[2rem] justify-end px-[1rem]">
+          <button onClick={closeMenu}>
+          <svg class="w-8 h-8 text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
+            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18 17.94 6M18 18 6.06 6"/>
+          </svg>
+          </button>
+        </div>
+          <div className="flex flex-col px-[1rem] justify-end text-end gap-4 text-white text-[1.2rem]">
+            <a href="">Inicio</a>
+            <a href="">Sobre Nosotros</a>
+            <a href="">Nuestros Servicios</a>
+            <a href="">Contáctanos</a>
+          </div>
+        </div>
+       
+      )}
     </>
   );
 }
