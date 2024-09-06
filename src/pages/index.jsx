@@ -275,14 +275,14 @@ const navigateServicios=()=>{
             <div className="lg:w-[50%] w-full justify-center flex flex-col py-[2rem] gap-4 px-[2rem]">
               <p className="lg:text-[1.5rem] text-[1.3rem] font-semibold montserrat">Nos especializamos en la instalación de:</p>
               <div className="flex flex-col gap-2 text-[1.2rem]">
-                  <p>-Mamparas</p>
-                  <p>-Ventanas</p>
-                  <p>-Ventanales</p>
-                  <p>-Persianas</p>
-                  <p>-Puertas</p>
-                  <p>-Mosquiteros</p>
-                  <p>-Puertas corredizas</p>
-                  <p>-Cortinas roller y mucho más ...</p>
+                  <p>📌 Mamparas</p>
+                  <p>📌 Ventanas</p>
+                  <p>📌 Ventanales</p>
+                  <p>📌 Persianas</p>
+                  <p>📌 Puertas</p>
+                  <p>📌 Mosquiteros</p>
+                  <p>📌 Puertas corredizas</p>
+                  <p>📌 Cortinas roller y mucho más ...</p>
                   
               </div>
             </div>
