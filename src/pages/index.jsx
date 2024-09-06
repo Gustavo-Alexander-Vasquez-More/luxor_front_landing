@@ -39,17 +39,41 @@ alert('Complete los campos para enviar su consulta.')
 }else{
   const encodedMessage = encodeURIComponent(`${mensaje}\n\nDatos del cliente:\nNombre: ${nombre}\nCorreo electrónico: ${correo}`);
   
-  const whatsappUrl = `https://wa.me/+541124001758?text=${encodedMessage}`;
+  const whatsappUrl = `https://api.whatsapp.com/send?phone=541124001758&text=${encodedMessage}`;
   window.open(whatsappUrl, '_blank');
 }
 } catch (error) {
   console.log(error);
 }
 }
+const navigateSobreNosotros=()=>{
+closeMenu()
+const scrollTop = window.innerHeight * 1.15; // 20% de la altura de la ventana
+  window.scrollTo({
+    top: scrollTop,
+    behavior: 'smooth' 
+  });
+}
+const navigateServicios=()=>{
+  closeMenu()
+  const scrollTop = window.innerHeight * 2.56; // 20% de la altura de la ventana
+    window.scrollTo({
+      top: scrollTop,
+      behavior: 'smooth' 
+    });
+  }
+  const navigateContacto=()=>{
+    closeMenu()
+    const scrollTop = window.innerHeight * 0.18; // 20% de la altura de la ventana
+      window.scrollTo({
+        top: scrollTop,
+        behavior: 'smooth' 
+      });
+    }
   return (
     <>
       {/* Navbar */}
-      <div className="w-full fixed z-50 flex px-[2rem] lg:gap-4 lg:px-[2rem] 2xl:px-[5rem] h-[15%] lg:h-[17%] py-[1rem] bg-[black] items-center justify-between">
+      <div className="w-full  z-50 flex px-[2rem] lg:gap-4 lg:px-[2rem] 2xl:px-[5rem] h-[15%] lg:h-[17%] py-[1rem] bg-[black] items-center justify-between">
         <Anchor to="/" className=" w-[45%] lg:w-[12%]">
           <img
             className="w-full"
@@ -59,9 +83,9 @@ alert('Complete los campos para enviar su consulta.')
         </Anchor>
         <div className="w-[88%] hidden montserrat 2xl:gap-[5rem] lg:gap-7 lg:flex items-center text-[1.1rem] text-[#EA570E] font-bold justify-end">
           <Anchor to="/">Inicio</Anchor>
-          <Anchor to="/services">Sobre nosotros</Anchor>
-          <Anchor to="/gallery">Nuestros servicios</Anchor>
-          <Anchor to="/contact">Contáctanos</Anchor>
+          <Anchor onClick={navigateSobreNosotros}>Sobre nosotros</Anchor>
+          <Anchor onClick={navigateServicios}>Nuestros servicios</Anchor>
+          <Anchor onClick={navigateContacto}>Contáctanos</Anchor>
           <div className="border-solid border-[2px] border-[white] rounded-[10px] flex justify-center items-center py-[1rem] px-[1rem]">
           <a target="_blank" href="https://wa.link/p8yp5z">+54 9 11 2400-1758</a>
         </div>
@@ -76,7 +100,7 @@ alert('Complete los campos para enviar su consulta.')
       </div>
 
       {/* Body */}
-      <div className='w-full h-auto pt-[35%] lg:pt-[14%] 2xl:pt-[10%] pb-[2rem] items-center bg-contain flex bg-[url("https://firebasestorage.googleapis.com/v0/b/boda-8ade5.appspot.com/o/freelance%2FPatrones%20(4).png?alt=media&token=b6f4ed8e-13fd-4759-a309-56c53c124f3d")] flex-col'>
+      <div className='w-full h-auto pt-[2rem] lg:pt-[2rem] 2xl:pt-[2rem] pb-[2rem] items-center bg-contain flex bg-[url("https://firebasestorage.googleapis.com/v0/b/boda-8ade5.appspot.com/o/freelance%2FPatrones%20(4).png?alt=media&token=b6f4ed8e-13fd-4759-a309-56c53c124f3d")] flex-col'>
         {/* Sección 1 - Contáctanos */}
         <div className="lg:w-[80%] w-[90%] items-center  h-auto  bg-[#f4f4f4] flex flex-col ">
           <div className="w-full h-[25vh]  lg:h-[30vh] lg:px-0   bg-cover flex items-center justify-center relative bg-center bg-[url('https://firebasestorage.googleapis.com/v0/b/tienda-elgestormx.appspot.com/o/fondo-terminos-y-condiciones.jpg?alt=media&token=5fe4dec4-aefd-4ad6-8797-af8e9d86307b')]">
@@ -249,7 +273,7 @@ alert('Complete los campos para enviar su consulta.')
           </div>
           <div className="w-full flex lg:flex-row flex-col">
             <div className="lg:w-[50%] w-full justify-center flex flex-col py-[2rem] gap-4 px-[2rem]">
-              <p className="lg:text-[1.5rem] text-[1.5rem] font-semibold montserrat">Nos especializamos en la instalación de:</p>
+              <p className="lg:text-[1.5rem] text-[1.3rem] font-semibold montserrat">Nos especializamos en la instalación de:</p>
               <div className="flex flex-col gap-2 text-[1.2rem]">
                   <p>-Mamparas</p>
                   <p>-Ventanas</p>
@@ -455,10 +479,10 @@ alert('Complete los campos para enviar su consulta.')
           </button>
         </div>
           <div className="flex flex-col px-[1rem] justify-end text-end gap-4 text-white text-[1.2rem]">
-            <a href="">Inicio</a>
-            <a href="">Sobre Nosotros</a>
-            <a href="">Nuestros Servicios</a>
-            <a href="">Contáctanos</a>
+            <a href="/">Inicio</a>
+            <a onClick={navigateSobreNosotros}>Sobre Nosotros</a>
+            <a onClick={navigateServicios}>Nuestros Servicios</a>
+            <a onClick={navigateContacto}>Contáctanos</a>
           </div>
         </div>
        
