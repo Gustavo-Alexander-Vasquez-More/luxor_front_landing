@@ -272,7 +272,7 @@ const navigateServicios=()=>{
             </div>
           </div>
           <div className="w-full flex lg:flex-row flex-col">
-            <div className="lg:w-[50%] w-full justify-center flex flex-col py-[2rem] gap-4 px-[2rem]">
+            <div className="lg:w-[50%] w-full justify-center flex flex-col py-[2rem] gap-4 px-[1rem] lg:px-[2rem]">
               <p className="lg:text-[1.5rem] text-[1.3rem] font-semibold montserrat">Nos especializamos en la instalación de:</p>
               <div className="flex flex-col gap-2 text-[1rem]">
                   <p>📌 Mamparas</p>
@@ -308,7 +308,7 @@ const navigateServicios=()=>{
       {/* whatsapp flotante */}
       <div className="fixed items-end bottom-[5%] gap-2 hidden lg:flex z-0 right-[0%]">
         <p className="text-black py-[0.3rem] text-[1.1rem] px-[0.5rem] bg-[white] font-semibold rounded-[10px]">Chateá con nosotros</p>
-        <a href="">
+        <a href="https://wa.me/+541124001758">
           <svg
             xmlns="http://www.w3.org/2000/svg"
             x="0px"
@@ -461,7 +461,7 @@ const navigateServicios=()=>{
           <p className="lg:flex hidden">todos los derechos reservados 2024</p>
           <div className="lg:hidden flex gap-2 justify-center text-center">
           <p className="">Diseñado por</p>
-          <a className="underline" href="">Saeta design®</a>
+          <a className="underline" href="https://wa.me/541130026676">Saeta design®</a>
           </div>
           <div className="lg:hidden flex  justify-center text-center">
           <p className="">todos los derechos reservados 2024</p>
@@ -504,7 +504,7 @@ const navigateServicios=()=>{
               <path d="M7.978 4a2.553 2.553 0 0 0-1.926.877C4.233 6.7 3.699 8.751 4.153 10.814c.44 1.995 1.778 3.893 3.456 5.572 1.68 1.679 3.577 3.018 5.57 3.459 2.062.456 4.115-.073 5.94-1.885a2.556 2.556 0 0 0 .001-3.861l-1.21-1.21a2.689 2.689 0 0 0-3.802 0l-.617.618a.806.806 0 0 1-1.14 0l-1.854-1.855a.807.807 0 0 1 0-1.14l.618-.62a2.692 2.692 0 0 0 0-3.803l-1.21-1.211A2.555 2.555 0 0 0 7.978 4Z"/>
               </svg>
             </a>
-            <a className="flex text-end gap-2 items-center justify-end">
+            <a href="https://wa.me/+541124001758" className="flex text-end gap-2 items-center justify-end">
             <p>Chateá con nosotros </p>
             <svg
             xmlns="http://www.w3.org/2000/svg"
